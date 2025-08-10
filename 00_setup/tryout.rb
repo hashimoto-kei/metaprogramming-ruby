@@ -8,7 +8,7 @@ class TryOut
   end
 
   def full_name
-    [@first_name, @middle_name, @last_name].compact.join(' ')
+    names.join(' ')
   end
 
   def upcase_full_name
@@ -16,6 +16,12 @@ class TryOut
   end
 
   def upcase_full_name!
-    [@first_name,@middle_name,@last_name].compact.map(&:upcase!).join(' ')
-  end 
+    names.map(&:upcase!).join(' ')
+  end
+
+  private
+
+  def names
+    [@first_name, @middle_name, @last_name].compact
+  end
 end
